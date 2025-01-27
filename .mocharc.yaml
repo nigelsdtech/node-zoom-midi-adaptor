@@ -1,0 +1,15 @@
+bail: true
+check-leaks: true
+recursive: true
+require:
+  - tsx
+full-trace: true
+inline-diffs: true
+log-timer-events: true
+trace: true 
+extension:
+  - ts
+  - js
+watch-files:
+  - src/**/*.ts
+  - test/**/*.ts

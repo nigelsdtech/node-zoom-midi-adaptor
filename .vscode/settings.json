@@ -1,0 +1,15 @@
+{
+    "mochaExplorer.env": {
+        "NODE_ENV": "test"
+    },
+    "mochaExplorer.autoload": true,
+    "mochaExplorer.exit": true,
+    "mochaExplorer.files": "test/**/*.ts",
+    "mochaExplorer.require": [
+        "tsx"
+    ],
+    "mochaExplorer.watch": "test/**/*.ts",
+    "mochaExplorer.esmLoader": true,
+    "mochaExplorer.optsFile": "",
+    "mocha.runTestsOnSave": "true",
+}

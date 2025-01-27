@@ -1,0 +1,25 @@
+{
+  "name": "midi-router",
+  "version": "1.0.0",
+  "dependencies": {
+    "config": "^3.3.12",
+    "lodash": "^4.17.21",
+    "midi": "^2.0.0",
+    "serialport": "^10.5.0"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^20.4.2",
+    "chai": "^5.1.2",
+    "mocha": "^10.8.2",
+    "nyc": "^17.1.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.1.6"
+  },
+  "scripts": {
+    "prepare": "rm -rf ./compiled/*; npx tsc",
+    "start": "npx tsx ./index.js",
+    "test": "npx mocha ./test/**/*.ts"
+  }
+}

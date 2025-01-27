@@ -1,0 +1,20 @@
+interestingChannels:
+  - 2
+targetInputDevices:
+  - HX Stomp
+  - "SINCO"
+targetOutputDevice:
+  - "ZOOM MS Series"
+changeControlMaps:
+  -
+    ccNum: 0
+    effectPosition: 0x01
+    effectInternalRef: 0x00
+  -
+    ccNum: 1
+    effectPosition: 0x01
+    effectInternalRef: 0x02
+  -
+    ccNum: 2
+    effectPosition: 0x01
+    effectInternalRef: 0x04
