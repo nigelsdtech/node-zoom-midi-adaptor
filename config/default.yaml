@@ -1,10 +1,9 @@
-interestingChannels:
-  - 2
 targetInputDevices:
   - HX Stomp
-  - "SINCO"
+  - SINCO
 targetOutputDevice:
-  - "ZOOM MS Series"
+  - ZOOM MS Series
+targetOutputDeviceChannel: 3
 changeControlMaps:
   -
     ccNum: 0

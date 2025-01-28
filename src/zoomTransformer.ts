@@ -31,31 +31,6 @@ export function transformCCMessage(
         
 }
 
-export function transformCCMessageWorking(
-    data0: number,
-    data1: number
-): MidiStatusMessage {
-
-    const pitchShiftEffectPosition = 0x01
-
-    switch (data0) {
-        // cc 0 is pitch shift on/off
-        case 0:
-            console.log('Setting pitch shift on/off to ', data1)
-            return decorateZoomSysexMessageForPedalParams(pitchShiftEffectPosition, 0x00, data1)
-        // cc 1 sets the pitch shift amount
-        case 1:
-            console.log('Setting pitch shift amount to ', data1)
-            return decorateZoomSysexMessageForPedalParams(pitchShiftEffectPosition, 0x02, data1)
-        // cc 2 sets the pitch shift balance
-        case 2:
-            console.log('Setting pitch shift balance to ', data1)
-            return decorateZoomSysexMessageForPedalParams(pitchShiftEffectPosition, 0x04, data1)
-        default:
-            return []
-    }
-}
-
 export function decorateZoomSysexMessageForPedalParams(
     effectPosition: number,
     effectCCNum: number,

@@ -6,14 +6,14 @@ output.closePort();
 
 export function createOutputStream(targetDeviceName: string): midi.Output {
 
-    console.log('Registering Zoom device...')
+    console.log(`Registering Zoom device (${targetDeviceName})...`)
     const numPorts = output.getPortCount();
     console.log(`Found ${numPorts} MIDI output ports`);
 
     for (let i = 0; i < numPorts; i++) {
-        const portName = output.getPortName(i);
+        const portName: string = output.getPortName(i);
         console.log(`Port ${i}: ${portName}`);
-        if (portName === targetDeviceName) {
+        if (portName.startsWith(targetDeviceName)) {
 
             console.log(`...found interesting device`);
             console.log(`Sending on port ${i} to device ${portName}`);

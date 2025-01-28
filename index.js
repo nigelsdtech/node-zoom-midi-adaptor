@@ -1,4 +1,4 @@
-import { main } from './compiled/src/main.js';
+import { main } from './compiled/src/main';
 
 main();
 

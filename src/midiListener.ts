@@ -35,8 +35,8 @@ function getPortNumberForAvailableInterestingDevice(
 ): number {
 
     for (let i = 0; i < numPorts; i++) {
-        const portName = input.getPortName(i);
-        if (portName === currentInterestingDeviceName) {
+        const portName: string = input.getPortName(i);
+        if (portName.startsWith(currentInterestingDeviceName)) {
             return i;
         }
     }

@@ -1,0 +1,16 @@
+[Unit]
+Description=zoom-midi-adaptor
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+ExecStart=/usr/bin/npm start > logs/midiCommands.log
+WorkingDirectory=/home/pi/Workspace/node-zoom-midi-adaptor
+Restart=on-failure
+RestartSec=2
+RestartSteps=2
+RestartMaxDelaySec=20
+
+[Install]
+WantedBy=multi-user.target

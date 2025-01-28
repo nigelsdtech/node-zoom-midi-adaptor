@@ -1,6 +1,6 @@
 import { MidiMessage } from 'midi'
 import {createInputStream} from './midiListener'
-import {decodeMidiMessage, isMidiMessageInteresting} from './midiUtils'
+import {decodeMidiMessage} from './midiUtils'
 import { transformMessage } from './zoomTransformer'
 import { createOutputStream } from './zoomMidiSender'
 import { DecodedMidiMessage, MidiMessageType, MidiStatusMessage } from '../types/midiMessages.spec'
@@ -16,13 +16,11 @@ export function main() {
   try {
 
 
+    const interestingChannel = (config.targetOutputDeviceChannel - 1) // Changing from human-readable to off-by-one (ugh)
+    const interestingInputDevices = config.targetInputDevices
+    const targetOutputDevice = config.targetOutputDevice
+    const changeControlMaps = config.changeControlMaps
     
-    const interestingChannels = config.get("interestingChannels")
-    const {ControlChange, ProgramChange, SystemExclusive} = MidiMessageType
-    const interestingTypes = [ControlChange, ProgramChange, SystemExclusive]
-    const interestingInputDevices = config.get("targetInputDevices")
-    const targetOutputDevice = config.get("targetOutputDevices")
-    const changeControlMaps = config.get("changeControlMaps")
 
     // Register midi destination
     const outputStream : midi.Output = createOutputStream(targetOutputDevice)
@@ -36,7 +34,7 @@ export function main() {
       console.log('Received message:', decodedMessageString)
 
       // Filter message
-      if (!isMidiMessageInteresting(decodedMessage, interestingChannels, interestingTypes)) return
+      if (decodedMessage.channel != interestingChannel) return
       
       // Transform message
       const transformedMessage : MidiStatusMessage = transformMessage(decodedMessage, rawMessage, changeControlMaps)

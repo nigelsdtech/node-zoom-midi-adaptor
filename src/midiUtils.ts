@@ -35,19 +35,6 @@ export const decodeMidiMessage = memoize((rawMessage: MidiMessage): DecodedMidiM
     };
 });
 
-
-export function isMidiMessageInteresting(
-    { channel, messageType }: DecodedMidiMessage,
-    interestingChannels: number[],
-    interestingTypes: string[]
-): boolean {
-
-    if (!interestingChannels.includes(channel)) return false;
-    if (!interestingTypes.includes(messageType)) return false;
-
-    return true
-}
-
 export function decorateSysexMessage(data: number[]): MidiStatusMessage {
     return [0xF0, ...data, 0xF7]
 }
