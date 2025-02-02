@@ -1,40 +1,41 @@
-import { MidiMessage } from 'midi';
-import { ChangeControlMap, DecodedMidiMessage, MidiMessageType, MidiStatusMessage } from '../types/midiMessages.spec';
-import { decorateSysexMessage } from './midiUtils';
+import { DecodedMidiMessage, MidiMessageType, MidiStatusMessage, ChangeControlMap } from '../types/midiMessages.spec';
+import { decodeMidiStatusMessage, decorateSysexMessage } from './midiUtils';
 import { memoize }  from 'lodash';
 
 export const transformMessage = memoize(
     (
-        { messageType, data0, data1 }: DecodedMidiMessage,
-        rawMessage: MidiMessage,
+        rawMessage: MidiStatusMessage,
         changeControlMaps: ChangeControlMap[]
     ): MidiStatusMessage => {
 
-        if (messageType === MidiMessageType.ControlChange) return transformCCMessage(data0, data1, changeControlMaps);
-        return rawMessage;
-    },
-    ({ messageType, data0, data1 }) => `${messageType}-${data0}-${data1}`
+        const decodedMidiStatusMessage: DecodedMidiMessage = decodeMidiStatusMessage(rawMessage);
+        const {messageType, data0} = decodedMidiStatusMessage;
+
+        if (messageType != MidiMessageType.ControlChange) return rawMessage;
+
+        // Get the relevant map
+        const relevantMap = changeControlMaps.find((map) => {return (map.ccNum === data0)})
+
+        // Just pass back the message if a map isn't found
+        if (!relevantMap) return rawMessage
+
+        const {data1: paramValue} = decodedMidiStatusMessage
+        switch (relevantMap.action) {
+            case 'changeEffectParam':
+                return createChangeEffectParamMessage(relevantMap.effectPosition, relevantMap.paramNum, paramValue)
+            case 'effectOnOff':
+                return createChangeEffectParamMessage(relevantMap.effectPosition, 0x00, (paramValue <= 64) ? 0x00 : 0x01)
+            case 'tunerOnOff':
+                return [0xB0, 0x4A, paramValue]
+        }
+    }
 );
 
 
-export function transformCCMessage(
-    data0: number,
-    data1: number,
-    changeControlMaps: ChangeControlMap[]
+function createChangeEffectParamMessage(
+    effectNum: number,
+    paramNum: number,
+    paramValue: number
 ): MidiStatusMessage {
-
-    const targetMap: ChangeControlMap | undefined = changeControlMaps.find((map) => {return (map.ccNum === data0)})
-
-    if (!targetMap) return []
-
-    return decorateZoomSysexMessageForPedalParams(targetMap.effectPosition, targetMap.effectInternalRef, data1)
-        
-}
-
-export function decorateZoomSysexMessageForPedalParams(
-    effectPosition: number,
-    effectCCNum: number,
-    data: number
-): MidiStatusMessage {
-    return decorateSysexMessage([0x52, 0x00, 0x58, 0x31, effectPosition, effectCCNum, data, 0x00])
+    return decorateSysexMessage([0x52, 0x00, 0x58, 0x31, effectNum, paramNum, paramValue, 0x00])
 }

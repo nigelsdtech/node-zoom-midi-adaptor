@@ -7,13 +7,18 @@ targetOutputDeviceChannel: 3
 changeControlMaps:
   -
     ccNum: 0
-    effectPosition: 0x01
-    effectInternalRef: 0x00
+    action: 'tunerOnOff'
   -
     ccNum: 1
+    action: 'effectOnOff'
     effectPosition: 0x01
-    effectInternalRef: 0x02
   -
     ccNum: 2
+    action: 'changeEffectParam'
     effectPosition: 0x01
-    effectInternalRef: 0x04
+    paramNum: 0x02
+  -
+    ccNum: 3
+    action: 'changeEffectParam'
+    effectPosition: 0x01
+    paramNum: 0x04

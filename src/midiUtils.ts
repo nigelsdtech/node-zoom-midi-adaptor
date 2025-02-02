@@ -1,4 +1,3 @@
-import { MidiMessage } from "midi";
 import { MidiMessageType, DecodedMidiMessage, MidiStatusMessage } from '../types/midiMessages.spec';
 import { memoize } from 'lodash';
 
@@ -19,20 +18,34 @@ export function classifyMessageType(status: number): MidiMessageType {
 }
 
 // Process raw MIDI message into a structured format
-export const decodeMidiMessage = memoize((rawMessage: MidiMessage): DecodedMidiMessage => {
+// So far proper implementations have only been made for ProgramChange, SystemExclusive, and ControlChange.
+export const decodeMidiStatusMessage = memoize((rawMessage: MidiStatusMessage): DecodedMidiMessage => {
     const [status, ...data] = rawMessage;
 
     const channel = status & 0x0F;
     const messageType = classifyMessageType(status);
 
-    const [data0, ...data1] = data;
-
-    return {
-        channel,
-        messageType,
-        data0: data0,
-        data1: data1 || 0
-    };
+    switch (messageType) {
+        case MidiMessageType.ProgramChange:
+            return {
+                channel,
+                messageType,
+                data0: data[0]
+            };
+        case MidiMessageType.SystemExclusive:
+            return {
+                channel,
+                messageType,
+                data0: data
+            };
+        default:
+            return {
+                channel,
+                messageType,
+                data0: data[0],
+                data1: data[1]
+            };
+    }
 });
 
 export function decorateSysexMessage(data: number[]): MidiStatusMessage {
