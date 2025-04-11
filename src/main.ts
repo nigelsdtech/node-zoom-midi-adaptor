@@ -1,8 +1,8 @@
 import { MidiMessage } from 'midi'
 import {createInputStream} from './midiListener'
 import {decodeMidiStatusMessage} from './midiUtils'
-import { transformMessage } from './zoomTransformer'
-import { createOutputStream } from './zoomMidiSender'
+import { transformMessage } from './zoomAdaptor/zoomTransformer'
+import { createOutputStream } from './zoomAdaptor/zoomMidiSender'
 import { DecodedMidiMessage, MidiStatusMessage } from '../types/midiMessages.spec'
 import * as midi from 'midi';
 

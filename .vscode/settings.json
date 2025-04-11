@@ -12,4 +12,17 @@
     "mochaExplorer.esmLoader": true,
     "mochaExplorer.optsFile": "",
     "mocha.runTestsOnSave": "true",
+
+    "github.copilot.chat.testGeneration.instructions": [
+        {
+            "file": "test-style.prompt.md"
+        }
+    ],
+
+    "github.copilot.chat.codeGeneration.useInstructionFiles": true,
+    "github.copilot.chat.codeGeneration.instructions": [
+        {
+            "file": "code-style.prompt.md"
+        }
+    ]
 }

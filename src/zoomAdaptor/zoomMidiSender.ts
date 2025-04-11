@@ -1,4 +1,4 @@
-import { decorateSysexMessage } from './midiUtils';
+import { decorateSysexMessage } from '../midiUtils';
 import * as midi from 'midi';
 
 const output = new midi.Output();
