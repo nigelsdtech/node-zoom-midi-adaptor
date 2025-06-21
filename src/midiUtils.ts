@@ -1,5 +1,5 @@
 import { MidiMessageType, DecodedMidiMessage, MidiStatusMessage } from '../types/midiMessages.spec';
-import { memoize } from 'lodash';
+import { memoize } from './utils';
 
 // Function that receives a number and parses it into a 
 export function classifyMessageType(status: number): MidiMessageType {

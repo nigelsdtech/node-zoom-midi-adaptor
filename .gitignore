@@ -57,6 +57,9 @@ typings/
 # dotenv environment variables file
 .env
 
+# clinic doctor output
+.clinic
+
 *.swp
 
 config/custom-environment-variables.*
