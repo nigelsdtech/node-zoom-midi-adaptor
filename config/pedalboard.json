@@ -1,0 +1,370 @@
+{
+  "targetInputDevices": [
+    "HX Stomp",
+    "SINCO"
+  ],
+  "targetOutputDevice": [
+    "ZOOM MS Series"
+  ],
+  "targetOutputDeviceChannel": 3,
+  "changeControlMaps": [
+    {
+      "ccNum": 0,
+      "action": "tunerOnOff"
+    },
+    {
+      "ccNum": 10,
+      "action": "effectOnOff",
+      "effectPosition": 1
+    },
+    {
+      "ccNum": 11,
+      "action": "changeEffectParam",
+      "effectPosition": 1,
+      "paramNum": 1
+    },
+    {
+      "ccNum": 12,
+      "action": "changeEffectParam",
+      "effectPosition": 1,
+      "paramNum": 2
+    },
+    {
+      "ccNum": 13,
+      "action": "changeEffectParam",
+      "effectPosition": 1,
+      "paramNum": 3
+    },
+    {
+      "ccNum": 14,
+      "action": "changeEffectParam",
+      "effectPosition": 1,
+      "paramNum": 4
+    },
+    {
+      "ccNum": 15,
+      "action": "changeEffectParam",
+      "effectPosition": 1,
+      "paramNum": 5
+    },
+    {
+      "ccNum": 16,
+      "action": "changeEffectParam",
+      "effectPosition": 1,
+      "paramNum": 6
+    },
+    {
+      "ccNum": 17,
+      "action": "changeEffectParam",
+      "effectPosition": 1,
+      "paramNum": 7
+    },
+    {
+      "ccNum": 18,
+      "action": "changeEffectParam",
+      "effectPosition": 1,
+      "paramNum": 8
+    },
+    {
+      "ccNum": 19,
+      "action": "changeEffectParam",
+      "effectPosition": 1,
+      "paramNum": 9
+    },
+    {
+      "ccNum": 20,
+      "action": "effectOnOff",
+      "effectPosition": 2
+    },
+    {
+      "ccNum": 21,
+      "action": "changeEffectParam",
+      "effectPosition": 2,
+      "paramNum": 1
+    },
+    {
+      "ccNum": 22,
+      "action": "changeEffectParam",
+      "effectPosition": 2,
+      "paramNum": 2
+    },
+    {
+      "ccNum": 23,
+      "action": "changeEffectParam",
+      "effectPosition": 2,
+      "paramNum": 3
+    },
+    {
+      "ccNum": 24,
+      "action": "changeEffectParam",
+      "effectPosition": 2,
+      "paramNum": 4
+    },
+    {
+      "ccNum": 25,
+      "action": "changeEffectParam",
+      "effectPosition": 2,
+      "paramNum": 5
+    },
+    {
+      "ccNum": 26,
+      "action": "changeEffectParam",
+      "effectPosition": 2,
+      "paramNum": 6
+    },
+    {
+      "ccNum": 27,
+      "action": "changeEffectParam",
+      "effectPosition": 2,
+      "paramNum": 7
+    },
+    {
+      "ccNum": 28,
+      "action": "changeEffectParam",
+      "effectPosition": 2,
+      "paramNum": 8
+    },
+    {
+      "ccNum": 29,
+      "action": "changeEffectParam",
+      "effectPosition": 2,
+      "paramNum": 9
+    },
+    {
+      "ccNum": 30,
+      "action": "effectOnOff",
+      "effectPosition": 3
+    },
+    {
+      "ccNum": 31,
+      "action": "changeEffectParam",
+      "effectPosition": 3,
+      "paramNum": 1
+    },
+    {
+      "ccNum": 32,
+      "action": "changeEffectParam",
+      "effectPosition": 3,
+      "paramNum": 2
+    },
+    {
+      "ccNum": 33,
+      "action": "changeEffectParam",
+      "effectPosition": 3,
+      "paramNum": 3
+    },
+    {
+      "ccNum": 34,
+      "action": "changeEffectParam",
+      "effectPosition": 3,
+      "paramNum": 4
+    },
+    {
+      "ccNum": 35,
+      "action": "changeEffectParam",
+      "effectPosition": 3,
+      "paramNum": 5
+    },
+    {
+      "ccNum": 36,
+      "action": "changeEffectParam",
+      "effectPosition": 3,
+      "paramNum": 6
+    },
+    {
+      "ccNum": 37,
+      "action": "changeEffectParam",
+      "effectPosition": 3,
+      "paramNum": 7
+    },
+    {
+      "ccNum": 38,
+      "action": "changeEffectParam",
+      "effectPosition": 3,
+      "paramNum": 8
+    },
+    {
+      "ccNum": 39,
+      "action": "changeEffectParam",
+      "effectPosition": 3,
+      "paramNum": 9
+    },
+    {
+      "ccNum": 40,
+      "action": "effectOnOff",
+      "effectPosition": 4
+    },
+    {
+      "ccNum": 41,
+      "action": "changeEffectParam",
+      "effectPosition": 4,
+      "paramNum": 1
+    },
+    {
+      "ccNum": 42,
+      "action": "changeEffectParam",
+      "effectPosition": 4,
+      "paramNum": 2
+    },
+    {
+      "ccNum": 43,
+      "action": "changeEffectParam",
+      "effectPosition": 4,
+      "paramNum": 3
+    },
+    {
+      "ccNum": 44,
+      "action": "changeEffectParam",
+      "effectPosition": 4,
+      "paramNum": 4
+    },
+    {
+      "ccNum": 45,
+      "action": "changeEffectParam",
+      "effectPosition": 4,
+      "paramNum": 5
+    },
+    {
+      "ccNum": 46,
+      "action": "changeEffectParam",
+      "effectPosition": 4,
+      "paramNum": 6
+    },
+    {
+      "ccNum": 47,
+      "action": "changeEffectParam",
+      "effectPosition": 4,
+      "paramNum": 7
+    },
+    {
+      "ccNum": 48,
+      "action": "changeEffectParam",
+      "effectPosition": 4,
+      "paramNum": 8
+    },
+    {
+      "ccNum": 49,
+      "action": "changeEffectParam",
+      "effectPosition": 4,
+      "paramNum": 9
+    },
+    {
+      "ccNum": 50,
+      "action": "effectOnOff",
+      "effectPosition": 5
+    },
+    {
+      "ccNum": 51,
+      "action": "changeEffectParam",
+      "effectPosition": 5,
+      "paramNum": 1
+    },
+    {
+      "ccNum": 52,
+      "action": "changeEffectParam",
+      "effectPosition": 5,
+      "paramNum": 2
+    },
+    {
+      "ccNum": 53,
+      "action": "changeEffectParam",
+      "effectPosition": 5,
+      "paramNum": 3
+    },
+    {
+      "ccNum": 54,
+      "action": "changeEffectParam",
+      "effectPosition": 5,
+      "paramNum": 4
+    },
+    {
+      "ccNum": 55,
+      "action": "changeEffectParam",
+      "effectPosition": 5,
+      "paramNum": 5
+    },
+    {
+      "ccNum": 56,
+      "action": "changeEffectParam",
+      "effectPosition": 5,
+      "paramNum": 6
+    },
+    {
+      "ccNum": 57,
+      "action": "changeEffectParam",
+      "effectPosition": 5,
+      "paramNum": 7
+    },
+    {
+      "ccNum": 58,
+      "action": "changeEffectParam",
+      "effectPosition": 5,
+      "paramNum": 8
+    },
+    {
+      "ccNum": 59,
+      "action": "changeEffectParam",
+      "effectPosition": 5,
+      "paramNum": 9
+    },
+    {
+      "ccNum": 60,
+      "action": "effectOnOff",
+      "effectPosition": 6
+    },
+    {
+      "ccNum": 61,
+      "action": "changeEffectParam",
+      "effectPosition": 6,
+      "paramNum": 1
+    },
+    {
+      "ccNum": 62,
+      "action": "changeEffectParam",
+      "effectPosition": 6,
+      "paramNum": 2
+    },
+    {
+      "ccNum": 63,
+      "action": "changeEffectParam",
+      "effectPosition": 6,
+      "paramNum": 3
+    },
+    {
+      "ccNum": 64,
+      "action": "changeEffectParam",
+      "effectPosition": 6,
+      "paramNum": 4
+    },
+    {
+      "ccNum": 65,
+      "action": "changeEffectParam",
+      "effectPosition": 6,
+      "paramNum": 5
+    },
+    {
+      "ccNum": 66,
+      "action": "changeEffectParam",
+      "effectPosition": 6,
+      "paramNum": 6
+    },
+    {
+      "ccNum": 67,
+      "action": "changeEffectParam",
+      "effectPosition": 6,
+      "paramNum": 7
+    },
+    {
+      "ccNum": 68,
+      "action": "changeEffectParam",
+      "effectPosition": 6,
+      "paramNum": 8
+    },
+    {
+      "ccNum": 69,
+      "action": "changeEffectParam",
+      "effectPosition": 6,
+      "paramNum": 9
+    }
+  ]
+}

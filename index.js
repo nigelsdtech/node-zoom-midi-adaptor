@@ -1,6 +1,6 @@
-import { main } from './compiled/src/main';
+const main = require('./compiled/src/main.js');
 
-main();
+main.main();
 
 // Handle graceful shutdown
 process.on('SIGINT', async () => {

@@ -2,7 +2,6 @@
   "name": "midi-router",
   "version": "1.0.0",
   "dependencies": {
-    "config": "^3.3.12",
     "midi": "^2.0.0"
   },
   "devDependencies": {
@@ -18,8 +17,8 @@
     "typescript": "^5.1.6"
   },
   "scripts": {
-    "prepare": "rm -rf ./compiled/*; npx tsc",
-    "start": "npx tsx ./index.js",
+    "build": "rm -rf ./compiled/*; npx tsc",
+    "start": "node ./index.js",
     "test": "npx mocha ./test/**/*.ts"
   }
 }

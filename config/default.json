@@ -1,0 +1,33 @@
+{
+  "targetInputDevices": [
+    "HX Stomp",
+    "SINCO"
+  ],
+  "targetOutputDevice": [
+    "ZOOM MS Series"
+  ],
+  "targetOutputDeviceChannel": 3,
+  "changeControlMaps": [
+    {
+      "ccNum": 0,
+      "action": "tunerOnOff"
+    },
+    {
+      "ccNum": 1,
+      "action": "effectOnOff",
+      "effectPosition": 1
+    },
+    {
+      "ccNum": 2,
+      "action": "changeEffectParam",
+      "effectPosition": 1,
+      "paramNum": 2
+    },
+    {
+      "ccNum": 3,
+      "action": "changeEffectParam",
+      "effectPosition": 1,
+      "paramNum": 4
+    }
+  ]
+}
