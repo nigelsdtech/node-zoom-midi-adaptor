@@ -1,6 +1,7 @@
 [Unit]
 Description=zoom-midi-adaptor
-After=network.target
+After=local-fs.target
+Wants=network.target
 
 [Service]
 Type=simple
